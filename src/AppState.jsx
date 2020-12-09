@@ -4,7 +4,7 @@ import React, {useContext, useReducer} from "react"
 /////////////Inital State/////////////
 
 const initalState = {
-    url: "http://lfreactrailsbackend.herokuapp.com"
+    url: "http://lfgrowthappbackend.herokuapp.com"
 }
 
 
