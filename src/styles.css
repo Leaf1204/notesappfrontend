@@ -28,5 +28,17 @@ header nav div:hover {
   background-color:#BEDCFE;
   color: white;
   padding: 10px;
-  
+}
+
+.auth form {
+  padding: 50px;
+}
+.auth form input {
+  background-color: #85BDA6;
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+  display: block;
+  margin: 10px auto;
+  text-align: center;
 }

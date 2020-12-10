@@ -23,6 +23,8 @@ const reducer = (state, action) => {
       newState = { ...state, token: null, username: null };
       window.localStorage.removeItem("auth");
       return newState;
+      default:
+        return state;
       break;
   }
 };
