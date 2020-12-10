@@ -4,18 +4,28 @@ import React, {useContext, useReducer} from "react"
 /////////////Inital State/////////////
 
 const initalState = {
-    url: "http://lfgrowthappbackend.herokuapp.com"
-}
+    url: "http://lfgrowthappbackend.herokuapp.com",
+    token: null,
+    username: null
+};
 
 
 /////Reducer
 // action = {type: "", payload:}
 const reducer = (state, action) => {
-  switch(action.type){
-      default:
-          return state
+  let newState;
+  switch (action.type) {
+    case "auth":
+      newState = { ...state, ...action.payload };
+      return newState;
+      break;
+    case "logout":
+      newState = { ...state, token: null, username: null };
+      window.localStorage.removeItem("auth");
+      return newState;
+      break;
   }
-}
+};
 
 ///App context
 const AppContext = React.createContext(null)
