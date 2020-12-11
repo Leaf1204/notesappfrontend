@@ -10,6 +10,7 @@ export const App = (props) => {
   const { state, dispatch } = useAppState();
   React.useState(() => {
     const auth = JSON.parse(window.localStorage.getItem("auth"));
+    console.log(auth)
     if (auth) {
       dispatch({ type: "auth", payload: auth });
       props.history.push("/dashboard");
