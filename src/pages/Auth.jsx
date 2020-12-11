@@ -19,7 +19,7 @@ const Auth = (props) => {
         "auth",
         JSON.stringify({ token, username: user.username })
       );
-      props.history.push("/dashboard");
+     props.history.push("/dashboard");
     }
   }, [userData]);
 

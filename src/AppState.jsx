@@ -7,7 +7,7 @@ const initialState = {
     url: "http://lfgrowthappbackend.herokuapp.com",
     token: null,
     username: null,
-    chrildren: null,
+    children: null,
     new: {
       name: "",
       dob: "",
@@ -38,14 +38,15 @@ const reducer = (state, action) => {
       break;
     case "getChildren" : 
       newState = { ...state, children: action.payload}
+      return newState
       break; 
-      case "select":
-        newState = { ...state, edit: action.payload };
-        return newState;
-        break;
+    case "select":
+      newState = { ...state, edit: action.payload };
+      return newState;
+      break;
       default:
-        return state;
-        break;
+      return state;
+      break;
   }
 };
 
@@ -69,5 +70,5 @@ export const AppState = (props) => {
 ////////////////////
 
 export const useAppState = () => {
-  return React.useContext(AppContext);
+  return useContext(AppContext);
 };

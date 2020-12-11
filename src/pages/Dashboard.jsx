@@ -5,18 +5,19 @@ import Form from "../components/Form.jsx";
 
 const Dashboard = (props) => {
   const {state, dispatch} = useAppState()
-  console.log(token)
+  console.log(state)
   const {token, url, children, username} = state;
-  console.log(token)
+  console.log(state)
 
   const getChildren = async () => {
     const response = await fetch(url + "/children/", {
       method: "get",
       headers: {
-        Authorization: "bearer" + token,
+        Authorization: "bearer " + token,
       },
     });
     const fetchedChildren = await response.json();
+    console.log(fetchedChildren)
     dispatch({ type: "getChildren", payload: fetchedChildren });
   };
 
@@ -27,8 +28,8 @@ const Dashboard = (props) => {
 
   const loaded = () => {
     return (
-      <div className="dashboard">
-        <h1>{username}'s child</h1>
+      <div className="childDiv">
+        <h1>{username}'s child(ren)</h1>
         <Link to="/dashboard/new">
           <button>Add Child</button>
         </Link>
@@ -39,9 +40,9 @@ const Dashboard = (props) => {
         <ul>
           {state.children.map((child) => (
             <div className="child" key={child.id}>
-              <h2>{child.name}</h2>
-              <h2>{child.dob}</h2>
-              <h4>{child.gender}</h4>
+              <h2>Child's Name: {child.name}</h2>
+              <h3>Date of birth: {child.dob}</h3>
+              <h4>Gender: {child.gender}</h4>
               <button
                 onClick={() => {
                   dispatch({ type: "select", payload: child });
@@ -50,18 +51,20 @@ const Dashboard = (props) => {
               >
                 Edit Child
               </button>
+              &nbsp;&nbsp;
               <button
                 onClick={() => {
                   fetch(url + "/children/" + child.id, {
                     method: "delete",
                     headers: {
-                      Authorization: "bearer" + token,
+                      Authorization: "bearer " + token,
                     },
                   }).then(() => getChildren());
                 }}
               >
                 Delete Child
               </button>
+              
             </div>
           ))}
         </ul>

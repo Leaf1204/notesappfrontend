@@ -5,7 +5,7 @@ const Form = (props) => {
   const { state, dispatch } = useAppState();
   const { token } = state;
   const action = props.match.params.action;
-  const [formData, setFormDatat] = React.useState(state[action]) 
+  const [formData, setFormData] = React.useState(state[action]) 
 
 
   const actions = {
@@ -14,7 +14,7 @@ const Form = (props) => {
         method: "post",
         headers: {
           "Content-Type": "application/json",
-          Authorization: "bearer" + token,
+          Authorization: "bearer " + token,
         },
         body: JSON.stringify(formData),
       }).then((response) => response.json());
@@ -24,7 +24,7 @@ const Form = (props) => {
           method: "put",
           headers: {
             "Content-Type": "application/json",
-            Authorization: "bearer" + token,
+            Authorization: "bearer " + token,
           },
           body: JSON.stringify(formData),
         }).then((response) => response.json());
@@ -32,6 +32,8 @@ const Form = (props) => {
 }
 
   const handleChange = (event) => {
+      console.log(event.target.name)
+      console.log(event.target.value)
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
@@ -46,9 +48,9 @@ const Form = (props) => {
   return (
     <div className="form">
         <form onSubmit={handleSubmit}>
-            <input type="text" name="name" value={formData.name} onChange={handleChange}/>
+            <input type="text" name="name" placeholder="Child's name" value={formData.name} onChange={handleChange}/>
             <input type="date" name="dob" value={formData.dob} onChange={handleChange}/>
-            <input type="text" name="gender" value={formData.gender} onChange={handleChange}/>
+            <input type="text" name="gender" placeholder="Gender"value={formData.gender} onChange={handleChange}/>
             <input type="submit" value={action}/>
 
         </form>

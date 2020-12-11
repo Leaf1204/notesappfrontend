@@ -8,14 +8,15 @@ import {useAppState} from "../AppState.jsx";
 
 export const App = (props) => {
   const { state, dispatch } = useAppState();
-  React.useState(() => {
+  React.useEffect(() => {
     const auth = JSON.parse(window.localStorage.getItem("auth"));
     console.log(auth)
     if (auth) {
       dispatch({ type: "auth", payload: auth });
-      props.history.push("/dashboard");
+    props.history.push("/dashboard");
+    
     } else {
-      props.history.push("/");
+     props.history.push("/");
     }
   }, []);
   
