@@ -4,7 +4,7 @@ import React, {useContext, useReducer} from "react"
 /////////////Inital State/////////////
 
 const initialState = {
-    url: "http://lfgrowthappbackend.herokuapp.com",
+    url: "https://lfgrowthappbackend.herokuapp.com",
     token: null,
     username: null,
     children: null,
