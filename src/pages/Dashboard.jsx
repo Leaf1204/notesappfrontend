@@ -67,7 +67,7 @@ const Dashboard = (props) => {
                 Delete Child
               </button>
               &nbsp;&nbsp;
-              <Link to="/notes/">
+              <Link to={`/notes/${child.id}`}>
               <button>View notes for {child.name}</button>
               </Link>
             </div>

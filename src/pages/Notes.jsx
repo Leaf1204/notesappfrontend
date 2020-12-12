@@ -6,7 +6,7 @@ import MilestoneForm from "../components/MilestoneForm.jsx";
 
 const Notes = (props) => {
   const {state, dispatch} = useAppState()
-
+  const child_id = props.match.params.child_id;
   const {token, url, milestones} = state;
 
 
@@ -30,13 +30,10 @@ const Notes = (props) => {
   const loaded = () => {
     return (
       <div className="noteDiv">
-        <Link to="/notes/new">
+        <Link to={`/notes/${child_id}/new`}>
           <button>Add Note/Milestone</button>
         </Link>
-        <Route
-          path="/notes/:action"
-          render={(rp) => <MilestoneForm {...rp} getMilestones={getMilestones} />}
-        />
+        
         <ul>
           {state.milestones.map((milestone) => (
             <div className="note" key={milestone.id}>
