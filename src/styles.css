@@ -99,3 +99,13 @@ text-align: center;
 button.addChild{
   width: 20%;
 }
+
+.note {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  margin: 70px auto;
+  padding: 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}

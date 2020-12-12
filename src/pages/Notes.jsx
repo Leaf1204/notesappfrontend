@@ -31,16 +31,17 @@ const Notes = (props) => {
     return (
       <div className="noteDiv">
         <Link to={`/notes/${child_id}/new`}>
-          <button>Add Note/Milestone</button>
+          <button>Add Note</button>
         </Link>
-        
+     
         <ul>
           {state.milestones.map((milestone) => (
             <div className="note" key={milestone.id}>
-              <h3>Date: {milestone.dateOf}</h3>
-              <h4>Child's weight: {milestone.weight}</h4>
+              <h4>Date: {milestone.dateOf}</h4>
+              <h4>Child's weight: {milestone.weight} kg</h4>
               <h4>Note: {milestone.note}</h4>
-              <button
+              <div className="buttons">
+              <button 
                 onClick={() => {
                   dispatch({ type: "select", payload: milestone });
                   props.history.push("/notes/edit");
@@ -48,10 +49,9 @@ const Notes = (props) => {
               >
                 Edit
               </button>
-              &nbsp;&nbsp;
               <button
                 onClick={() => {
-                  fetch(url + "/milestones/" + milestone.id, {
+                  fetch(url + `/milestones/${child_id}`, + milestone.id, {
                     method: "delete",
                     headers: {
                       Authorization: "bearer " + token,
@@ -59,9 +59,12 @@ const Notes = (props) => {
                   }).then(() => getMilestones());
                 }}
               >
-                Delete
+                Delete Note
               </button>
-              
+              <Link to="/dashboard">
+              <button>Back</button>
+            </Link>
+            </div>
             </div>
           ))}
         </ul>
