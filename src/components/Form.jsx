@@ -32,8 +32,7 @@ const Form = (props) => {
 }
 
   const handleChange = (event) => {
-      console.log(event.target.name)
-      console.log(event.target.value)
+      
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
@@ -52,7 +51,6 @@ const Form = (props) => {
             <input type="date" name="dob" value={formData.dob} onChange={handleChange}/>
             <input type="text" name="gender" placeholder="Gender"value={formData.gender} onChange={handleChange}/>
             <input type="submit" value={action}/>
-
         </form>
     </div>
   );

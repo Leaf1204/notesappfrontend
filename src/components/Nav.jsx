@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import { useAppState } from "../AppState.jsx";
 
 const Nav = (props) => {
-    console.log(useAppState())
+   
   const { state, dispatch } = useAppState();
-  console.log(state)
+  
 
   return (
     <header>

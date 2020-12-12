@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "cross-env": "^7.0.2",
+    "milligram": "^1.4.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router": "^5.2.0",

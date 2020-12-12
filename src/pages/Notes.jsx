@@ -1,13 +1,14 @@
 import React from "react";
 import { useAppState } from "../AppState.jsx";
 import { Route, Link } from "react-router-dom";
-import Form from "../components/Form.jsx";
+import MilestoneForm from "../components/MilestoneForm.jsx";
 
-const Milestones = (props) => {
+
+const Notes = (props) => {
   const {state, dispatch} = useAppState()
-  console.log(state)
-  const {token, url, children, username, milestones} = state;
-  console.log(state)
+
+  const {token, url, milestones} = state;
+
 
   const getMilestones = async () => {
     const response = await fetch(url + "/milestones/", {
@@ -17,7 +18,7 @@ const Milestones = (props) => {
       },
     });
     const fetchedMilestones = await response.json();
-    console.log(fetchedMilestones)
+ 
     dispatch({ type: "getMilestones", payload: fetchedMilestones });
   };
 
@@ -29,12 +30,12 @@ const Milestones = (props) => {
   const loaded = () => {
     return (
       <div className="noteDiv">
-        <Link to="/milestones/new">
+        <Link to="/notes/new">
           <button>Add Note/Milestone</button>
         </Link>
         <Route
-          path="/milestones/:action"
-          render={(rp) => <Form {...rp} getMilestones={getMilestones} />}
+          path="/notes/:action"
+          render={(rp) => <MilestoneForm {...rp} getMilestones={getMilestones} />}
         />
         <ul>
           {state.milestones.map((milestone) => (
@@ -45,7 +46,7 @@ const Milestones = (props) => {
               <button
                 onClick={() => {
                   dispatch({ type: "select", payload: milestone });
-                  props.history.push("/milestones/edit");
+                  props.history.push("/notes/edit");
                 }}
               >
                 Edit
@@ -73,4 +74,4 @@ const Milestones = (props) => {
   return milestones ? loaded() : <h1>Loading...</h1>;
 };
 
-export default Milestones;
+export default Notes;

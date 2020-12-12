@@ -3,11 +3,12 @@ import { useAppState } from "../AppState.jsx";
 import { Route, Link } from "react-router-dom";
 import Form from "../components/Form.jsx";
 
+
 const Dashboard = (props) => {
   const {state, dispatch} = useAppState()
-  console.log(state)
+
   const {token, url, children, username} = state;
-  console.log(state)
+  
 
   const getChildren = async () => {
     const response = await fetch(url + "/children/", {
@@ -17,7 +18,7 @@ const Dashboard = (props) => {
       },
     });
     const fetchedChildren = await response.json();
-    console.log(fetchedChildren)
+    
     dispatch({ type: "getChildren", payload: fetchedChildren });
   };
 
@@ -65,7 +66,7 @@ const Dashboard = (props) => {
                 Delete Child
               </button>
               &nbsp;&nbsp;
-              <Link to="/milestones/">
+              <Link to="/notes/">
               <button>View notes for {child.name}</button>
               </Link>
             </div>

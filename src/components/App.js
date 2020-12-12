@@ -5,14 +5,14 @@ import Home from "../pages/Home.jsx";
 import Auth from "../pages/Auth.jsx";
 import Dashboard from "../pages/Dashboard.jsx";
 import {useAppState} from "../AppState.jsx";
-import Milestones from "../pages/Milestones.jsx";
-import Test from "../pages/test.jsx"
+import Notes from "../pages/Notes.jsx";
+
 
 export const App = (props) => {
   const { state, dispatch } = useAppState();
   React.useEffect(() => {
     const auth = JSON.parse(window.localStorage.getItem("auth"));
-    console.log(auth)
+    
     if (auth) {
       dispatch({ type: "auth", payload: auth });
     props.history.push("/dashboard");
@@ -29,8 +29,7 @@ export const App = (props) => {
     <Route exact path="/" component={Home}/>
     <Route path="/auth/:form" component={Auth}/>
     <Route path="/dashboard" component={Dashboard}/> 
-    <Route exact path="/milestones" component={Milestones}/>
-    <Route exact path="/test" component={Test}/>
+    <Route exact path="/notes" component={Notes}/>
     </Switch>
     </>
   )
