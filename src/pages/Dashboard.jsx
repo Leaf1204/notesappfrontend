@@ -32,7 +32,7 @@ const Dashboard = (props) => {
       <div className="childDiv">
         <h1>{username}'s child(ren)</h1>
         <Link to="/dashboard/new">
-          <button>Add Child</button>
+          <button className="addChild">Add Child</button>
         </Link>
         <Route
           path="/dashboard/:action"
@@ -42,7 +42,7 @@ const Dashboard = (props) => {
           {state.children.map((child) => (
             <div className="child" key={child.id}>
               <h2>Child's Name: {child.name}</h2>
-              <h3>Date of birth: {child.dob}</h3>
+              <h4>Date of birth: {child.dob}</h4>
               <h4>Gender: {child.gender}</h4>
               <button
                 onClick={() => {

@@ -9,7 +9,10 @@ const Nav = (props) => {
 
   return (
     <header>
-      <h1>Child Well</h1>
+        <div className="topnav">
+            
+        <h1>Child Well</h1>
+        </div>
       <nav>
         {!state.token ? (
           <>

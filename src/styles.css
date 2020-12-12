@@ -1,7 +1,19 @@
-
+* {
+  background-color:#F8F8F8 ;
+}
+h3 {
+  margin: 10%;
+  padding: 50px;
+  text-align: center;
+}
+.topnav {
+  background-color: #D5E8F1;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
 header {
   text-align: center;
-  color: #BEDCFE;
+  color: #8E7DBE;
 }
 
 header nav {
@@ -16,7 +28,7 @@ header nav a {
 
 header nav div {
   font-style: larger;
-  background-color: #85BDA6;
+  background-color: #829BCA;
   padding: 10px;
   color: white;
   width: 200px;
@@ -25,13 +37,19 @@ header nav div {
 }
 
 header nav div:hover {
-  background-color:#BEDCFE;
+  background-color:#606c76;
   color: white;
   padding: 10px;
 }
 
 .auth form {
-  padding: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    margin: 100px auto;
+    padding: 60px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 .auth form input {
   background-color: #85BDA6;
@@ -42,4 +60,21 @@ header nav div:hover {
   margin: 10px auto;
   text-align: center;
 }
+.child {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 100px;
+  padding: 60px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
 
+.button, button, input[type='button'], input[type='reset'], input[type='submit'] {
+  background-color: #829BCA;
+  border-color: lightgrey;
+  width: 70%;
+}
+
+button.addChild{
+  width: 20%;
+}
