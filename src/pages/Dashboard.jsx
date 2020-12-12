@@ -44,6 +44,7 @@ const Dashboard = (props) => {
               <h2>Child's Name: {child.name}</h2>
               <h4>Date of birth: {child.dob}</h4>
               <h4>Gender: {child.gender}</h4>
+              <div className="buttons">
               <button
                 onClick={() => {
                   dispatch({ type: "select", payload: child });
@@ -69,6 +70,7 @@ const Dashboard = (props) => {
               <Link to="/notes/">
               <button>View notes for {child.name}</button>
               </Link>
+            </div>
             </div>
           ))}
         </ul>

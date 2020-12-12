@@ -22,10 +22,10 @@ const MilestoneForm = (props) => {
     edit: () => {
         return fetch(state.url + "/milestones/" + state.edit.id, {
           method: "put",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: "bearer " + token,
-          },
+          // headers: {
+          //   "Content-Type": "application/json",
+          //   Authorization: "bearer " + token,
+          // },
           body: JSON.stringify(formData),
         }).then((response) => response.json());
       },

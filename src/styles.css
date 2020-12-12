@@ -52,7 +52,7 @@ header nav div:hover {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 .auth form input {
-  background-color: #85BDA6;
+  background-color: #829BCA;
   color: white;
   padding: 8px;
   border-radius: 5px;
@@ -60,19 +60,40 @@ header nav div:hover {
   margin: 10px auto;
   text-align: center;
 }
-.child {
+
+.form {
   display: flex;
+  justify-content: center;
   flex-direction: column;
   width: 50%;
-  margin: 100px;
+  margin: 100px auto;
   padding: 60px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
+.childDiv{
+margin: auto;
+text-align: center;
+}
 
+.child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  margin: 70px auto;
+  padding: 60px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 .button, button, input[type='button'], input[type='reset'], input[type='submit'] {
   background-color: #829BCA;
   border-color: lightgrey;
-  width: 70%;
+
 }
 
 button.addChild{
