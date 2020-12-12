@@ -64,10 +64,15 @@ const Dashboard = (props) => {
               >
                 Delete Child
               </button>
-              
+              &nbsp;&nbsp;
+              <Link to="/milestones/">
+              <button>View notes for {child.name}</button>
+              </Link>
             </div>
           ))}
         </ul>
+        <hr/>
+          <p>Copyright &copy; 2020 Child Well All Rights Reserved</p>
       </div>
     );
   };

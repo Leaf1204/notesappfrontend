@@ -40,6 +40,10 @@ const reducer = (state, action) => {
       newState = { ...state, children: action.payload}
       return newState
       break; 
+    case "getMilestones" : 
+      newState = { ...state, milestones: action.payload}
+      return newState
+      break; 
     case "select":
       newState = { ...state, edit: action.payload };
       return newState;
