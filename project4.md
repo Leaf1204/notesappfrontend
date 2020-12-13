@@ -6,7 +6,7 @@
 
 
 #### The ispiration behind this app was to provide a platform for parents to document your child(ren)'s immunizations, measurments, illnesses, doctors' instructions (and questions to remember to ask). 
-#### Users can make a "note" of every doctor/ dentist/ healthcare visit in one place. You never have to worry about lossing health record book. 
+#### Users can make a "note" of every doctor/ dentist/ healthcare visit in one place. You never have to worry about losing health record book. 
 
 #### The backend API was made using Ruby on rails. While the front end uses React. 
 
